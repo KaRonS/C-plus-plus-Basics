@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+   int menuChoice, months;
+   double totalCharges;
+   
+   //declare constant 
+   const double Adult = 40.00;
+   const double Child = 30.00;
+   const double Family = 100.00;
+   
+   // setup format
+   cout<<fixed<<setprecision(2)<<showpoint;
+   do{
+       //Print menu
+       cout<<"Please choose the type of membership"<<endl;
+       cout<<"1. Adult Membership ($40.00/month)"<<endl;
+       cout<<"2. Child Membership ($30.00/month)"<<endl;
+       cout<<"3. Family Membership ($100.00/month)"<<endl;
+       cout<<"4. Exit"<<endl;
+       cin>>menuChoice;
+       
+       //validate user's menu
+       while(menuChoice <1 || menuChoice > 4){
+           cout<<"Invalid choice, please answer again"<<endl;
+           cin>>menuChoice;
+       }
+       if(menuChoice == 4)
+       break; //extis or while loop
+       
+       //ask user for number of months (this is not with the if statement)
+       cout<<"Ener the number of months"<<endl;
+       cin>>months;
+       
+       //validate the months
+       while(months < 1 || months > 24){
+           cout<<"Invalid choice, please answer again"<<endl;
+       }
+       //case method
+       switch(menuChoice){
+           case 1:
+           totalCharges = months * Adult;
+           break;
+           case 2:
+           totalCharges = months * Child;
+           break;
+           case 3:
+           totalCharges = months * Family;
+           break;
+           default:
+           break;
+       }
+       cout<<"Your charges would be $"<<totalCharges<<endl;
+   }
+   while(menuChoice != 4);
+   cout<<"Thanks for choosing our gym"<<endl;
+   return 0;
+}
+
