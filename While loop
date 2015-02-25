@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int months = 0;
+	double balance = 5000;
+	double payment = 500;
+	// while loop
+	while (balance > 0)
+	{
+		months = months + 1; //months + 1 or ++ is optional
+		balance = balance - payment; // optional balance -= payment
+
+	}
+	cout<<"It will take you "<<months<<" monhs to pay off your loan"<<endl;
+	}
