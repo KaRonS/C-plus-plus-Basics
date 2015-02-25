@@ -8,7 +8,8 @@ int months = 0;
 	double balance = 5000;
 	double payment = 500;
 	// while loop
-	while (balance > 0)
+	while (balance > 0) //do not put ";" on this line, it will result in an infinite loop
+	
 	{
 		months = months + 1; //months + 1 or ++ is optional
 		balance = balance - payment; // optional balance -= payment
